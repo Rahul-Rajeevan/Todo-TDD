@@ -1,5 +1,5 @@
 function increment(value) {
-    return value + 1;
+    return value + 4;
   }
   
   function decrement(value) {
