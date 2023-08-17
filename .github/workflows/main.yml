@@ -1,6 +1,9 @@
 name: CI/CD Workflow
 
-on: push # Trigger the workflow on each push
+on:
+  push:
+    branches:
+      - main # Adjust this to your branch name
 
 jobs:
   test:
@@ -18,6 +21,7 @@ jobs:
 
   deploy:
     needs: test
+    if: ${{ success() }}
     runs-on: ubuntu-latest
 
     steps:
